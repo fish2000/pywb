@@ -152,26 +152,4 @@ setup(
         wb-manager = pywb.manager.manager:main_wrap_exc
         warcserver = pywb.apps.cli:warcserver
         """,
-    classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Web Environment',
-        'License :: OSI Approved :: GNU General Public License (GPL)',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
-        'Programming Language :: Python :: 3.12',
-        'Programming Language :: Python :: 3.13',
-        'Programming Language :: Python :: 3.14',
-        'Topic :: Internet :: Proxy Servers',
-        'Topic :: Internet :: WWW/HTTP',
-        'Topic :: Internet :: WWW/HTTP :: WSGI',
-        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
-        'Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware',
-        'Topic :: Internet :: WWW/HTTP :: WSGI :: Server',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: System :: Archiving',
-        'Topic :: System :: Archiving :: Backup',
-        'Topic :: Utilities',
-    ])
+    classifiers=load_text_as_list('CLASSIFIERS.txt'))
