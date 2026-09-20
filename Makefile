@@ -1,6 +1,6 @@
 
-PROJECT_NAME = clu
-CLU_REPL_SCRIPT = $(PROJECT_BASE)/$(PROJECT_NAME)/scripts/repl.py
+PROJECT_NAME = pywb
+# CLU_REPL_SCRIPT = $(PROJECT_BASE)/$(PROJECT_NAME)/scripts/repl.py
 
 clean: clean-cython clean-build-artifacts clean-pyc
 
@@ -21,7 +21,7 @@ clean-cython:
 	find $(PROJECT_BASE) -name \*.so -print -delete
 
 clean-build-artifacts:
-	rm -rf build dist python_$(PROJECT_NAME).egg-info
+	rm -rf build dist $(PROJECT_NAME).egg-info
 
 clean-test-artifacts:
 	rm -rf  $(PROJECT_ROOT)/.pytest_cache $(PROJECT_BASE)/.pytest_cache $(PROJECT_BASE)/.nox
@@ -73,15 +73,6 @@ test-all: check nox
 test-configuration:
 	python -m pytest --setup-plan --trace-config | pygmentize -l clean -O "style=vim"
 
-version:
-	python -m clu.version
-
-consts:
-	python -m clu.constants
-
-modules:
-	python -m clu
-
 remove-changelog:
 	rm -f CHANGELOG.md
 
@@ -115,6 +106,4 @@ coverage:
 
 .PHONY: check pytest nox renox
 .PHONY: test test-all
-
-.PHONY: version consts-old modules-old consts modules
 .PHONY: repl ipy ptpy ptipy
