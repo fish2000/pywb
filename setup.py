@@ -76,7 +76,7 @@ def generate_git_hash_py(pkg, filename='git_hash.py'):
         pass
 
 
-def load_requirements(filename):
+def load_text_as_list(filename):
     with open(filename, 'rt') as fh:
         requirements = fh.read().rstrip().split('\n')
     return requirements
@@ -119,7 +119,7 @@ setup(
         ('sample_archive/text_content',
          glob.glob('sample_archive/text_content/*')),
     ],
-    install_requires=load_requirements('requirements.txt'),
+    install_requires=load_text_as_list('requirements.txt'),
     extras_require={
         "i18n":  [
             "babel",
@@ -128,7 +128,7 @@ setup(
         ],
     },
     python_requires='>=3.9,<3.15',
-    tests_require=load_requirements("test_requirements.txt"),
+    tests_require=load_text_as_list("test_requirements.txt"),
     cmdclass={'test': PyTest},
     test_suite='',
     entry_points="""
