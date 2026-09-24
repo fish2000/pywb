@@ -82,13 +82,13 @@ changelog: remove-changelog
 	git commit -m "[make] Changelog updated @ $(shell git rev-parse --short HEAD)"
 
 repl:
-	CLU_USER_SCRIPT="pywb/utils/clurepl.py" python -m bpython --config=$(PROJECT_ROOT)/.config/bpython/config.py3 -i $(CLU_REPL_SCRIPT)
+	CLU_USER_SCRIPT="clurepl.py" python -m bpython --config=$(PROJECT_ROOT)/.config/bpython/config.py3 -i $(CLU_REPL_SCRIPT)
 
 ipy:
-	CLU_USER_SCRIPT="pywb/utils/clurepl.py" python -m IPython --autoindent --pylab --colors=LightBG --config=$(PROJECT_ROOT)/.config/ipython/config3.py -i $(CLU_REPL_SCRIPT)
+	CLU_USER_SCRIPT="clurepl.py" python -m IPython --autoindent --pylab --colors=LightBG --config=$(PROJECT_ROOT)/.config/ipython/config3.py -i $(CLU_REPL_SCRIPT)
 
 ptpy:
-	CLU_USER_SCRIPT="pywb/utils/clurepl.py" python -m ptpython -i $(CLU_REPL_SCRIPT)
+	CLU_USER_SCRIPT="clurepl.py" python -m ptpython -i $(CLU_REPL_SCRIPT)
 
 # this loads the system IPython, not the virtualenv:
 ptipy:
