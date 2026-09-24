@@ -94,7 +94,7 @@ def load_text_as_list(filename):
 def get_package_data():
     pkgs = ['static/*.*',
             'templates/*',
-            '*.yaml']
+            '*.yaml', 'CLASSIFIERS.txt']
 
     for root, dirs, files in os.walk(os.path.join('pywb', 'static')):
         for dir_ in dirs:
