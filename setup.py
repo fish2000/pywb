@@ -105,6 +105,17 @@ def get_package_data():
 
 generate_git_hash_py('pywb')
 
+# ENTRY POINTS
+ENTRY_POINTS = {
+    'console_scripts'  : ['pywb = pywb.apps.cli:wayback',
+                          'wayback = pywb.apps.cli:wayback',
+                          'cdx-server = pywb.apps.cli:cdx_server',
+                          'live-rewrite-server = pywb.apps.cli:live_rewrite_server',
+                          'cdx-indexer = pywb.indexer.cdxindexer:main',
+                          'wb-manager = pywb.manager.manager:main_wrap_exc',
+                          'warcserver = pywb.apps.cli:warcserver']
+}
+
 setup(
     name='pywb',
     version=__version__,
@@ -113,7 +124,7 @@ setup(
     author_email='ikreymer@gmail.com',
     description='Pywb Webrecorder web archive replay and capture tools',
     long_description=get_long_description(),
-    license='GPL',
+    license='GPL-3.0-or-later',
     packages=find_packages(exclude=['tests_disabled']),
     zip_safe=False,
     package_data={
@@ -140,14 +151,5 @@ setup(
     tests_require=load_text_as_list("test_requirements.txt"),
     cmdclass={'test': PyTest},
     test_suite='',
-    # entry_points="""
-    #     [console_scripts]
-    #     pywb = pywb.apps.cli:wayback
-    #     wayback = pywb.apps.cli:wayback
-    #     cdx-server = pywb.apps.cli:cdx_server
-    #     live-rewrite-server = pywb.apps.cli:live_rewrite_server
-    #     cdx-indexer = pywb.indexer.cdxindexer:main
-    #     wb-manager = pywb.manager.manager:main_wrap_exc
-    #     warcserver = pywb.apps.cli:warcserver
-    #     """,
+    entry_points=ENTRY_POINTS,
     classifiers=load_text_as_list('CLASSIFIERS.txt'))

@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pywb"
-# version = "0.1.2"
 description = "Pywb Webrecorder web archive replay and capture tools"
 readme = "README.rst"
 license = "GPL-3.0-or-later"
@@ -32,10 +31,6 @@ cdx-indexer = 'pywb.indexer.cdxindexer:main'
 wb-manager = 'pywb.manager.manager:main_wrap_exc'
 warcserver = 'pywb.apps.cli:warcserver'
 
-# TBD, see setup.py and PyTest type:
-# [project.entry-points.pytest11]
-# pywb-testing = 'pywb.testing.pytest'
-
 [project.urls]
 Homepage = "https://github.com/webrecorder/pywb"
 Repository = "https://github.com/webrecorder/pywb"
@@ -60,15 +55,10 @@ dependencies = { file = "requirements.txt" }
 optional-dependencies = { all = { file = "extra_requirements.txt" }, testing = { file = "test_requirements.txt" } }
 version = { attr = "pywb.__version__" }
 
-# [[tool.setuptools.dynamic.optional-dependencies.all]]
-# file = "extra_requirements.txt"
-
-# [[tool.setuptools.dynamic.optional-dependencies.test]]
-# file = "test_requirements.txt"
-
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst", "Makefile"]
+exclude = ["tests_disabled"]
 
 # TBD
 # [tool.pytest.ini_options]
