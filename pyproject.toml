@@ -59,6 +59,3 @@ version = { attr = "pywb.__version__" }
 where = ["."]
 include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst", "Makefile"]
 exclude = ["tests_disabled"]
-
-[tool.pytest.ini_options]
-addopts = ["-p", "no:python-clu", "-p", "no:clu_pytest"]
