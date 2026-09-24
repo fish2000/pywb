@@ -2,7 +2,6 @@
 # vim: set sw=4 et:
 
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
 import glob
 import os
 import pathlib
@@ -32,37 +31,12 @@ def download_wabac_sw():
 
     sw_path.write_bytes(sw_data)
 
-
 download_wabac_sw()
-
 
 def get_long_description():
     with open('README.rst', 'r') as fh:
         long_description = fh.read()
     return long_description
-
-
-class PyTest(TestCommand):
-    user_options = []
-
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_suite = ' '
-
-    def run_tests(self):
-        from gevent.monkey import patch_all
-        patch_all()
-
-        import pytest
-        import os
-        os.environ.pop('PYWB_CONFIG_FILE', None)
-        cmdline = '--cov-config .coveragerc --cov pywb'
-        cmdline += ' -v --doctest-modules ./pywb/ tests/'
-
-        errcode = pytest.main(cmdline.split(' '))
-
-        sys.exit(errcode)
-
 
 def get_git_short_hash():
     import subprocess
@@ -75,7 +49,6 @@ def get_git_short_hash():
     except Exception:
         return ''
 
-
 def generate_git_hash_py(pkg, filename='git_hash.py'):
     try:
         git_hash = get_git_short_hash()
@@ -84,12 +57,10 @@ def generate_git_hash_py(pkg, filename='git_hash.py'):
     except Exception:
         pass
 
-
 def load_text_as_list(filename):
     with open(filename, 'rt') as fh:
         text_list = fh.read().rstrip().split('\n')
     return text_list
-
 
 def get_package_data():
     pkgs = ['static/*.*',
@@ -101,7 +72,6 @@ def get_package_data():
             pkgs.append(os.path.relpath(os.path.join(root, dir_, '*'), 'pywb'))
 
     return pkgs
-
 
 generate_git_hash_py('pywb')
 
@@ -149,7 +119,5 @@ setup(
     },
     python_requires='>=3.9,<3.15',
     tests_require=load_text_as_list("test_requirements.txt"),
-    cmdclass={'test': PyTest},
-    test_suite='',
-    entry_points=ENTRY_POINTS,
-    classifiers=load_text_as_list('CLASSIFIERS.txt'))
+    classifiers=load_text_as_list('CLASSIFIERS.txt'),
+    entry_points=ENTRY_POINTS)
