@@ -140,14 +140,14 @@ setup(
     tests_require=load_text_as_list("test_requirements.txt"),
     cmdclass={'test': PyTest},
     test_suite='',
-    entry_points="""
-        [console_scripts]
-        pywb = pywb.apps.cli:wayback
-        wayback = pywb.apps.cli:wayback
-        cdx-server = pywb.apps.cli:cdx_server
-        live-rewrite-server = pywb.apps.cli:live_rewrite_server
-        cdx-indexer = pywb.indexer.cdxindexer:main
-        wb-manager = pywb.manager.manager:main_wrap_exc
-        warcserver = pywb.apps.cli:warcserver
-        """,
+    # entry_points="""
+    #     [console_scripts]
+    #     pywb = pywb.apps.cli:wayback
+    #     wayback = pywb.apps.cli:wayback
+    #     cdx-server = pywb.apps.cli:cdx_server
+    #     live-rewrite-server = pywb.apps.cli:live_rewrite_server
+    #     cdx-indexer = pywb.indexer.cdxindexer:main
+    #     wb-manager = pywb.manager.manager:main_wrap_exc
+    #     warcserver = pywb.apps.cli:warcserver
+    #     """,
     classifiers=load_text_as_list('CLASSIFIERS.txt'))
