@@ -1,6 +1,8 @@
 
 PROJECT_NAME = pywb
-CLU_REPL_SCRIPT = ../develop/lib/python3.14/site-packages/clu/scripts/repl.py
+# CLU_REPL_SCRIPT = ../develop/lib/python3.14/site-packages/clu/scripts/repl.py
+# CLU_REPL_SCRIPT = ../develop/lib/$(shell readlink `which python`)/site-packages/clu/scripts/repl.py
+CLU_REPL_SCRIPT = $(VIRTUAL_ENV)/lib/$(shell readlink `which python`)/site-packages/clu/scripts/repl.py
 
 clean: clean-cython clean-build-artifacts clean-pyc
 
