@@ -4,7 +4,7 @@
 #
 
 import sys, os
-from pywb.utils import download_wabac_sw
+from pywb.buildtools import download_wabac_sw
 
 def main():
     download_wabac_sw()

@@ -11,7 +11,6 @@ import urllib.request
 
 from pywb import __version__
 
-
 root_dir = pathlib.Path(__file__).parent
 
 WABAC_SW_URL = "https://cdn.jsdelivr.net/npm/@webrecorder/wabac@2.27.2/dist/sw.js"
