@@ -1,6 +1,6 @@
 
 PROJECT_NAME = pywb
-# CLU_REPL_SCRIPT = $(PROJECT_BASE)/$(PROJECT_NAME)/scripts/repl.py
+CLU_REPL_SCRIPT = ../develop/lib/python3.14/site-packages/clu/scripts/repl.py
 
 clean: clean-cython clean-build-artifacts clean-pyc
 
@@ -82,7 +82,7 @@ changelog: remove-changelog
 	git commit -m "[make] Changelog updated @ $(shell git rev-parse --short HEAD)"
 
 repl:
-	python -m bpython --config=$(PROJECT_ROOT)/.config/bpython/config.py3 -i $(CLU_REPL_SCRIPT)
+	CLU_USER_SCRIPT="pywb/utils/clurepl.py" python -m bpython --config=$(PROJECT_ROOT)/.config/bpython/config.py3 -i $(CLU_REPL_SCRIPT)
 
 ipy:
 	python -m IPython --autoindent --pylab --colors=LightBG --config=$(PROJECT_ROOT)/.config/ipython/config3.py -i $(CLU_REPL_SCRIPT)
