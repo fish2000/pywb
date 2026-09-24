@@ -8,4 +8,4 @@ lxml
 babel
 translate_toolkit
 babel-vue-extractor
-python-clu>=0.10.0
+python-clu>=0.10.2
