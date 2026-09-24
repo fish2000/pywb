@@ -60,6 +60,5 @@ where = ["."]
 include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst", "Makefile"]
 exclude = ["tests_disabled"]
 
-# TBD
-# [tool.pytest.ini_options]
-# delete_temps = true
+[tool.pytest.ini_options]
+addopts = ["-p", "no:python-clu", "-p", "no:clu_pytest"]
