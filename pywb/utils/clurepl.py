@@ -15,7 +15,8 @@ importables = basedir.importables('pywb')
 for dotpath in importables:
     try:
         importlib.import_module(dotpath)
-        print(f"Imported {dotpath}")
     except ImportError:
         print(f"FAILED TO IMPORT: {dotpath}")
+    else:
+        print(f"Imported {dotpath}")
 
