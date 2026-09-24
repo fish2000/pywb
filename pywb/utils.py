@@ -2,6 +2,8 @@
 #
 # utils.py – Project config utilities for pywb
 #
+from setuptools.command.test import test as TestCommand
+import pathlib
 
 root_dir = pathlib.Path(__file__).parent.parent
 
