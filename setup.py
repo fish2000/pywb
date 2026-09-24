@@ -11,7 +11,6 @@ import urllib.request
 
 from pywb import __version__
 
-
 root_dir = pathlib.Path(__file__).parent
 
 WABAC_SW_VERSION = "2.27.2"
