@@ -14,7 +14,6 @@ from pywb import __version__
 
 root_dir = pathlib.Path(__file__).parent
 
-
 WABAC_SW_VERSION = "2.27.2"
 WABAC_SW_URL = f"https://cdn.jsdelivr.net/npm/@webrecorder/wabac@{WABAC_SW_VERSION}/dist/sw.js"
 
@@ -89,8 +88,8 @@ def generate_git_hash_py(pkg, filename='git_hash.py'):
 
 def load_text_as_list(filename):
     with open(filename, 'rt') as fh:
-        requirements = fh.read().rstrip().split('\n')
-    return requirements
+        text_list = fh.read().rstrip().split('\n')
+    return text_list
 
 
 def get_package_data():
