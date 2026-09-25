@@ -46,6 +46,7 @@ License = "https://github.com/webrecorder/pywb/blob/master/LICENSE"
 'sample_archive/cdxj' = ["sample_archive/cdxj/*"]
 'sample_archive/non-surt-cdx' = ["sample_archive/non-surt-cdx/*"]
 'sample_archive/zipcdx' = ["sample_archive/zipcdx/*"]
+'sample_archive/waczs' = ["sample_archive/waczs/*"]
 'sample_archive/warcs' = ["sample_archive/warcs/*"]
 'sample_archive/text_content' = ["sample_archive/text_content/*"]
 
