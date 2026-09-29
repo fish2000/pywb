@@ -1,6 +1,6 @@
 import pytest
 
-@pytest.hookimpl(trylast=True)
+@pytest.hookimpl()
 def pytest_configure(config):
     if config.pluginmanager.has_plugin("clu_pytest"):
         plugin = config.pluginmanager.get_plugin("clu_pytest")
