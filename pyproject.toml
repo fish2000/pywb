@@ -49,6 +49,7 @@ License = "https://github.com/webrecorder/pywb/blob/master/LICENSE"
 'sample_archive/waczs' = ["sample_archive/waczs/*"]
 'sample_archive/warcs' = ["sample_archive/warcs/*"]
 'sample_archive/text_content' = ["sample_archive/text_content/*"]
+'sample-deploy' = ["sample-deploy/*"]
 
 [tool.setuptools.dynamic]
 classifiers = { file = "CLASSIFIERS.txt" }
@@ -58,5 +59,5 @@ version = { attr = "pywb.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst", "Makefile"]
+include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst"]
 exclude = ["tests_disabled"]
