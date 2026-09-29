@@ -60,6 +60,8 @@ version = { attr = "pywb.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pywb*", "*.jpg", "*.jpeg", "*.txt",
-                    "*.conf", "*.md", "*.rst"]
+include = ["pywb*", "static/*", "templates/*",
+                    "*.jpg", "*.jpeg", "*.png", "*.txt",
+                    "*.js", "*.html", "*.css",
+                    "*.conf", "*.yaml", "*.md", "*.rst"]
 exclude = ["tests_disabled"]
