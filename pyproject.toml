@@ -42,13 +42,14 @@ Download = "https://pypi.org/project/pywb/"
 License = "https://github.com/webrecorder/pywb/blob/master/LICENSE"
 
 [tool.setuptools.data-files]
+'sample_archive/access' = ["sample_archive/access/*"]
 'sample_archive/cdx' = ["sample_archive/cdx/*"]
 'sample_archive/cdxj' = ["sample_archive/cdxj/*"]
 'sample_archive/non-surt-cdx' = ["sample_archive/non-surt-cdx/*"]
-'sample_archive/zipcdx' = ["sample_archive/zipcdx/*"]
+'sample_archive/text_content' = ["sample_archive/text_content/*"]
 'sample_archive/waczs' = ["sample_archive/waczs/*"]
 'sample_archive/warcs' = ["sample_archive/warcs/*"]
-'sample_archive/text_content' = ["sample_archive/text_content/*"]
+'sample_archive/zipcdx' = ["sample_archive/zipcdx/*"]
 'sample-deploy' = ["sample-deploy/*"]
 
 [tool.setuptools.dynamic]
@@ -59,5 +60,6 @@ version = { attr = "pywb.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pywb*", "*.jpg", "*.jpeg", "*.txt", "*.conf", "*.md", "*.rst"]
+include = ["pywb*", "*.jpg", "*.jpeg", "*.txt",
+                    "*.conf", "*.md", "*.rst"]
 exclude = ["tests_disabled"]
